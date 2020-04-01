@@ -1,0 +1,19 @@
+<div>
+  <header>BA DAILY QUOTES APP</header>
+  <hr>
+  <ul>
+    <div *ngFor="let quote of quotes;let i=index">
+      <li>
+        {{ quote.author }}
+      </li>
+      <button (click)='toggleDetails(i)'>
+        Show Quote Details
+      </button>
+
+
+      <app-quote-detail *ngIf='quote.showDescription'  [quote]='quote'></app-quote-detail>
+    </div>
+
+  </ul>
+
+</div>
