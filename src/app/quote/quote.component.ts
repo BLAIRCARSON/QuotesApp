@@ -1,3 +1,4 @@
+ 
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
 
@@ -7,23 +8,39 @@ import { Quote } from '../quote';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  quotes: Quote[] = [
-    new Quote(1, 'Blaircarson', 'It always gets better Believe!', new Date(2020, 3,12)),
-    new Quote(2, 'Steve Jobs', 'If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The Vision Pulls You.',new Date(2020, 3,12)),
-    new Quote(3, 'Will Rodgers', 'Don’t Let Yesterday Take Up Too Much Of Today.', new Date(2020, 3,12)),
-    new Quote(4, 'JonathanM', 'You Learn More From Failure Than From Success. Don’t Let It Stop You. Failure Builds Character.',new Date(2020, 3,12)),
-    new Quote(5, 'Evans', 'Pupper likes expensive snacks',new Date(2020, 3,12)),
-    new Quote(6, 'JWinston Churchill', 'The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.',new Date(2020, 3,12)),
+  quotes = [
+    new Quote(1, 'Adebayo Ola', 'Albgit addert Einstein', 'The difference between stupidity and genius is that genius has its limits', new Date(2018, 3, 14)),
+    new Quote(2, 'Adebayo Ola', 'Winston Churchill', "A good speech should be like a woman's skirt, long enough to cover the subject and short enough to create interest", new Date(2018, 4, 14)),
+    new Quote(3, 'Adebayo Ola', 'Donald Trump', 'Failure is not an option', new Date(2020, 3, 14)),
   ];
-  toggleDetails(index){
-    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+
+
+  addNewQuote(quote) {
+    const quoteLength = this.quotes.length;
+    quote.id = quoteLength + 1;
+    quote.dateCreated = new Date();
+    this.quotes.push(quote);
+
+  }
+  deleteQuote(isComplete, index) {
+    if (isComplete) {
+      const toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}`);
+
+      if (toDelete) {
+        this.quotes.splice(index, 1);
+      }
+    }
   }
 
-completeQuote(isComplete, index){
-  if(isComplete){
-    this.quotes.splice(index, 1);
+  toogleDetails(index) {
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
-}
+  completeQuote(isComplete, index) {
+    if (isComplete) {
+      this.quotes.splice(index, 1);
+    }
+  }
+
 
   constructor() { }
 

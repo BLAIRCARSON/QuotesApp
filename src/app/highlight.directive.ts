@@ -5,19 +5,17 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 })
 export class HighlightDirective {
 
-  constructor(private elem:ElementRef){}
+  constructor(private elem: ElementRef) {
 
-  @HostListener ("click") onClicks(){
-    this.backGround("green")
   }
-  @HostListener("dblclick") onDoubleClicks(){
-    this.backGround("None")
+  @HostListener('click') onClicks() {
+    this.textDeco('yellow');
   }
-
-  private backGround(action:string)
-
-  {
-    this.elem.nativeElement.style.backgroundColor=action;
-   }
+  @HostListener('dbclick') onDoubleClicks() {
+    this.textDeco('white');
+  }
+  private textDeco(action: string) {
+    this.elem.nativeElement.style.backgroundColor = 'yellow';
+  }
 
 }

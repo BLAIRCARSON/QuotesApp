@@ -1,21 +1,29 @@
-<div>
-  <header>BA DAILY QUOTES APP</header>
-  <hr>
-  <ul>
-    <div *ngFor="let quote of quotes;let i=index">
-      <li >
-        Posted By:{{ quote.author }} on {{quote.postedDate}}
-      </li>
-      <button (click)='toggleDetails(i)'>
-        Quote Details
-      </button>
-
-
-  <app-quote-detail *ngIf='quote.showDescription'  [quote]='quote' (isComplete)='completeQuote($event,i)'>
-    
-  </app-quote-detail>
+<h1 class="text-center">QUOTES DISPLAYING MACHINE </h1>
+<hr/>
+<div class="container jumbotron">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container">
+        <div class="row">
+          <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+        </div>
+      </div>
     </div>
-
-  </ul>
-
+    <div class="col-md-6">
+      <div class="container">
+        <div class="row" *ngFor='let quote of quotes; let i = index'>
+          <div class="container">
+            <h4 id="{{i}}" appHighlight>{{quote.description}} </h4>
+            <button (click)='toogleDetails(i)'>View More Details</button>
+          </div>
+          <div class="container">
+            <div class="row" *ngIf="quote.showDescription">
+              <app-quote-details [quote]='quote' (isComplete)='deleteQuote($event,i)'>
+              </app-quote-details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
