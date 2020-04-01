@@ -3,15 +3,17 @@
   <hr>
   <ul>
     <div *ngFor="let quote of quotes;let i=index">
-      <li>
-        {{ quote.author }}
+      <li >
+        Posted By:{{ quote.author }} on {{quote.postedDate}}
       </li>
       <button (click)='toggleDetails(i)'>
-        Show Quote Details
+        Quote Details
       </button>
 
 
-      <app-quote-detail *ngIf='quote.showDescription'  [quote]='quote'></app-quote-detail>
+  <app-quote-detail *ngIf='quote.showDescription'  [quote]='quote' (isComplete)='completeQuote($event,i)'>
+    
+  </app-quote-detail>
     </div>
 
   </ul>

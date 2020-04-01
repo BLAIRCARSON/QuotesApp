@@ -1,3 +1,7 @@
-<p>
-    {{ quote.description }}
-</p>
+<h4>
+    <p appHighlight>
+        {{ quote.description }}
+    </p>
+    <button (click)='quoteComplete(true)'>Delete
+    </button>
+</h4>
