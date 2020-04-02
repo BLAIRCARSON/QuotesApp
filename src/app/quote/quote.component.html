@@ -26,7 +26,7 @@
         <div class="row" *ngFor='let quote of quotes; let i = index'>
           <div class="container">
             <h4 id="{{i}}" appHighlight>{{quote.description}} </h4>
-            <button (click)='toogleDetails(i)'>View More Details</button>
+            <button (click)='toogleDetails(i)'>More Details</button>
           </div>
           <div class="container">
             <div class="row" *ngIf="quote.showDescription">

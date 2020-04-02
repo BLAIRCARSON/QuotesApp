@@ -9,13 +9,13 @@ export class HighlightDirective {
 
   }
   @HostListener('click') onClicks() {
-    this.textDeco('yellow');
+    this.textDeco('green');
   }
   @HostListener('dbclick') onDoubleClicks() {
     this.textDeco('white');
   }
   private textDeco(action: string) {
-    this.elem.nativeElement.style.backgroundColor = 'yellow';
+    this.elem.nativeElement.style.backgroundColor = 'green';
   }
 
 }

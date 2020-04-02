@@ -11,7 +11,9 @@ export class QuoteComponent implements OnInit {
   quotes = [
     new Quote(1, 'Blair', 'Blaircarson', 'It always gets better.Believe!', new Date(2020, 3, 31)),
     new Quote(2, 'Blair', 'Abdifatah', "There is no true Liberation, without the liberation of a woman", new Date(2020, 3, 31)),
+    new Quote(3, 'Blair', 'JWinston Churchill', 'The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.', new Date(2020, 3, 31)),
     new Quote(3, 'Blair', 'Evans', 'Pupper likes expensive snacks', new Date(2020, 3, 31)),
+    new Quote(3, 'Blair', 'Will Rogers', 'Don’t Let Yesterday Take Up Too Much Of Today.', new Date(2020, 3, 31)),
   ];
 
 
@@ -24,7 +26,7 @@ export class QuoteComponent implements OnInit {
   }
   deleteQuote(isComplete, index) {
     if (isComplete) {
-      const toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}`);
+      const toDelete = confirm(`Are you sure you want to delete this Quote:: "${this.quotes[index].description}?"`);
 
       if (toDelete) {
         this.quotes.splice(index, 1);
