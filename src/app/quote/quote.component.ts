@@ -9,9 +9,9 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes = [
-    new Quote(1, 'Adebayo Ola', 'Albgit addert Einstein', 'The difference between stupidity and genius is that genius has its limits', new Date(2018, 3, 14)),
-    new Quote(2, 'Adebayo Ola', 'Winston Churchill', "A good speech should be like a woman's skirt, long enough to cover the subject and short enough to create interest", new Date(2018, 4, 14)),
-    new Quote(3, 'Adebayo Ola', 'Donald Trump', 'Failure is not an option', new Date(2020, 3, 14)),
+    new Quote(1, 'Blair', 'Blaircarson', 'It always gets better.Believe!', new Date(2020, 3, 31)),
+    new Quote(2, 'Blair', 'Abdifatah', "There is no true Liberation, without the liberation of a woman", new Date(2020, 3, 31)),
+    new Quote(3, 'Blair', 'Evans', 'Pupper likes expensive snacks', new Date(2020, 3, 31)),
   ];
 
 
