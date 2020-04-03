@@ -12,17 +12,22 @@
   </div>
 </div>
 <hr/>
-<div class="container jumbotron" id="addquote">
+<div class="container jumbotron" id="addquote" style="background-color: rgb(226, 200, 218);">
   <div class="row">
     <div class="col-md-6" >
       <div class="container" >
         <div class="row">
           <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
-      </div>
+      </div> <br>
+    <button><a href="https://www.brainyquote.com/topics/origin-quotes">View Famous Quotes</a></button> <button><a href="https://www.facebook.com/engineervinceblair/?ref=bookmarks">Like our Facebook Page</a></button>
     </div>
+    
     <div class="col-md-6">
       <div class="container">
+        <h1 style="color:green; font-family: fantasy;">QUOTES:-</h1>
+
+        <br>
         <div class="row" *ngFor='let quote of quotes; let i = index'>
           <div class="container">
             <h4 id="{{i}}" appHighlight>{{quote.description}} </h4>
@@ -38,4 +43,8 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="card-footer text-center" >
+  <p>© 2020 Copyright:KIRUI VINCENT</p>
 </div>

@@ -1,20 +1,24 @@
 <p>
-  Author:
-  <br>{{quote.author}}</p>
-<p>Name:
-  <br>{{quote.name}}</p>
+  <b>Author of the Quote</b>:
+  {{quote.author}}
+</p>
+<p>
+  <b>Person who submitted</b>:
+  {{quote.name}}
+</p>
 <p>This <b style="color: green;">Quote</b> was added {{quote.completeDate|dateCount}} Days Ago</p>
 <div class="row">
   <div class="col-md-6">
     <a href="" (click)="voteUp()">
-      <i class="fas fa-thumbs-up ">Upvote</i>
+     Upvote
     </a> ({{likes}})
   </div>
   <div class="col-md-6">
     <a href="" (click)="voteDown()">
-      <i class="fas fa-thumbs-down">Downvote</i>
+      Downvote
     </a> ({{disLikes}})
   </div>
 </div>
+<br>
 
 <button class="btn btn-danger" (click)='quoteDelete(true)'> Delete Quote </button>
